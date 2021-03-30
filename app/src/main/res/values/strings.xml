@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">4K Wallpapper Changer (Without Ads)</string>
+    <string name="wallpaper_settings">Wallpaper settings</string>
+    <string name="minimum">15 min</string>
+    <string name="medium">30 min</string>
+    <string name="maximum">1 hour</string>
+    <string name="never">never</string>
+    <string name="randomize">Randomize</string>
+    <string name="interval_settings">Time interval setting</string>
+</resources>

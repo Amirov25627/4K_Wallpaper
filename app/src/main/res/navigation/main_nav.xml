@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav"
+    app:startDestination="@id/categoryListFragment">
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.example.a4kwallpapperchangerwithoutads.ui.CategoryListFragment"
+        android:label="CategoryListFragment" >
+        <action
+            android:id="@+id/action_categoryListFragment_to_picturesListFragment"
+            app:destination="@id/picturesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/picturesListFragment"
+        android:name="com.example.a4kwallpapperchangerwithoutads.ui.PicturesListFragment"
+        android:label="PicturesListFragment" >
+        <action
+            android:id="@+id/action_picturesListFragment_to_pictureItemFragment"
+            app:destination="@id/pictureItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pictureItemFragment"
+        android:name="com.example.a4kwallpapperchangerwithoutads.ui.PictureItemFragment"
+        android:label="PictureItemFragment" >
+        <action
+            android:id="@+id/action_pictureItemFragment_to_wallpaperSettingsFragment"
+            app:destination="@id/wallpaperSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wallpaperSettingsFragment"
+        android:name="com.example.a4kwallpapperchangerwithoutads.ui.WallpaperSettingsFragment"
+        android:label="WallpaperSettingsFragment" />
+</navigation>
