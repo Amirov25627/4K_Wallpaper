@@ -1,4 +1,4 @@
-package com.example.a4kwallpapperchangerwithoutads.network
+package kz.first.a4kwallpapperchangerwithoutads.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -22,7 +22,8 @@ interface PicturesService {
 
 object PicturesAPI {
     val service: PicturesService by lazy {
-        retrofit.create(PicturesService::class.java)
+        retrofit.create(
+            PicturesService::class.java)
     }
 }
 

@@ -4,7 +4,7 @@
     app:startDestination="@id/categoryListFragment">
     <fragment
         android:id="@+id/categoryListFragment"
-        android:name="com.example.a4kwallpapperchangerwithoutads.ui.CategoryListFragment"
+        android:name="kz.first.a4kwallpapperchangerwithoutads.ui.CategoryListFragment"
         android:label="CategoryListFragment" >
         <action
             android:id="@+id/action_categoryListFragment_to_picturesListFragment"
@@ -12,7 +12,7 @@
     </fragment>
     <fragment
         android:id="@+id/picturesListFragment"
-        android:name="com.example.a4kwallpapperchangerwithoutads.ui.PicturesListFragment"
+        android:name="kz.first.a4kwallpapperchangerwithoutads.ui.PicturesListFragment"
         android:label="PicturesListFragment" >
         <action
             android:id="@+id/action_picturesListFragment_to_pictureItemFragment"
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/pictureItemFragment"
-        android:name="com.example.a4kwallpapperchangerwithoutads.ui.PictureItemFragment"
+        android:name="kz.first.a4kwallpapperchangerwithoutads.ui.PictureItemFragment"
         android:label="PictureItemFragment" >
         <action
             android:id="@+id/action_pictureItemFragment_to_wallpaperSettingsFragment"

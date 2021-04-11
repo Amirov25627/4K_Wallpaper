@@ -1,9 +1,9 @@
-package com.example.a4kwallpapperchangerwithoutads.network
+package kz.first.a4kwallpapperchangerwithoutads.network
 
 data class PicturesData(
-        val urls: PictureUrls,
-        val links: Links,
-        val id: String
+    val urls: PictureUrls,
+    val links: Links,
+    val id: String
 )
 
 data class PictureUrls(

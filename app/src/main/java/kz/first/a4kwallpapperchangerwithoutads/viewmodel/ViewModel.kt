@@ -1,13 +1,13 @@
-package com.example.a4kwallpapperchangerwithoutads.viewmodel
+package kz.first.a4kwallpapperchangerwithoutads.viewmodel
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.example.a4kwallpapperchangerwithoutads.network.PicturesAPI
-import com.example.a4kwallpapperchangerwithoutads.network.CategoriesData
+import kz.first.a4kwallpapperchangerwithoutads.network.PicturesAPI
+import kz.first.a4kwallpapperchangerwithoutads.network.CategoriesData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.a4kwallpapperchangerwithoutads.network.PicturesData
+import kz.first.a4kwallpapperchangerwithoutads.network.PicturesData
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
@@ -29,18 +29,22 @@ open class ViewModel(app: Application) : ViewModel() {
 
     fun getCategoryList() {
         viewModelScope.launch {
-            status.value = STATUS.LOADING
+            status.value =
+                STATUS.LOADING
             try {
                 val list = PicturesAPI.service.categoryList()
                 categoryList.value = list
-                status.value = STATUS.SUCCESS
+                status.value =
+                    STATUS.SUCCESS
             } catch (e: Exception) {
                 if (categoryList.value.isNullOrEmpty()) {
                     Log.d("ERROR!", e.toString())
-                    status.value = STATUS.ERROR
+                    status.value =
+                        STATUS.ERROR
                 } else {
                     Log.d("ERROR", categoryList.value.toString())
-                    status.value = STATUS.SUCCESS
+                    status.value =
+                        STATUS.SUCCESS
                 }
             }
         }

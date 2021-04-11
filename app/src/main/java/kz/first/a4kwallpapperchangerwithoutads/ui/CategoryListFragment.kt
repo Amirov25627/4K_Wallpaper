@@ -1,4 +1,4 @@
-package com.example.a4kwallpapperchangerwithoutads.ui
+package kz.first.a4kwallpapperchangerwithoutads.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,10 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
-import com.example.a4kwallpapperchangerwithoutads.R
-import com.example.a4kwallpapperchangerwithoutads.databinding.CategoryListFragmentBinding
-import com.example.a4kwallpapperchangerwithoutads.network.CategoriesData
-import com.example.a4kwallpapperchangerwithoutads.viewmodel.ViewModel
+import kz.first.a4kwallpapperchangerwithoutads.R
+import kz.first.a4kwallpapperchangerwithoutads.databinding.CategoryListFragmentBinding
+import kz.first.a4kwallpapperchangerwithoutads.network.CategoriesData
+import kz.first.a4kwallpapperchangerwithoutads.viewmodel.ViewModel
 
 
 class CategoryListFragment : Fragment() {
@@ -47,7 +47,10 @@ class CategoryListFragment : Fragment() {
         }
 
 
-        adapter = CategoryListItemAdapter(viewModel)
+        adapter =
+            CategoryListItemAdapter(
+                viewModel
+            )
         binding.categoryRV.adapter = adapter
 
         //centering items on display

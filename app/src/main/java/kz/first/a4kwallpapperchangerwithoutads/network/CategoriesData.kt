@@ -1,4 +1,4 @@
-package com.example.a4kwallpapperchangerwithoutads.network
+package kz.first.a4kwallpapperchangerwithoutads.network
 
 
 data class CategoriesData(

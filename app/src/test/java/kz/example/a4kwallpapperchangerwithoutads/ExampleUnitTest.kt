@@ -1,4 +1,4 @@
-package com.example.a4kwallpapperchangerwithoutads
+package kz.example.a4kwallpapperchangerwithoutads
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.a4kwallpapperchangerwithoutads.ui
+package kz.first.a4kwallpapperchangerwithoutads.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -7,13 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.a4kwallpapperchangerwithoutads.databinding.PicturesListFragmentBinding
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.example.a4kwallpapperchangerwithoutads.R
-import com.example.a4kwallpapperchangerwithoutads.network.CategoriesData
-import com.example.a4kwallpapperchangerwithoutads.network.PicturesData
-import com.example.a4kwallpapperchangerwithoutads.viewmodel.ViewModel
+import kz.first.a4kwallpapperchangerwithoutads.R
+import kz.first.a4kwallpapperchangerwithoutads.databinding.PicturesListFragmentBinding
+import kz.first.a4kwallpapperchangerwithoutads.network.PicturesData
+import kz.first.a4kwallpapperchangerwithoutads.viewmodel.ViewModel
 
 
 class PicturesListFragment : Fragment() {
@@ -29,7 +28,10 @@ class PicturesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = PicturesListItemAdapter(viewModel)
+        adapter =
+            PicturesListItemAdapter(
+                viewModel
+            )
         binding.picturesRV.adapter = adapter
 
         viewModel.getPictureList()

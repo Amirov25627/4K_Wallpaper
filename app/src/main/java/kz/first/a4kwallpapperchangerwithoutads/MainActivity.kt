@@ -1,4 +1,4 @@
-package com.example.a4kwallpapperchangerwithoutads
+package kz.first.a4kwallpapperchangerwithoutads
 
 import android.Manifest
 import android.app.DownloadManager
@@ -20,8 +20,9 @@ import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.example.a4kwallpapperchangerwithoutads.viewmodel.Factory
-import com.example.a4kwallpapperchangerwithoutads.viewmodel.ViewModel
+import kz.first.a4kwallpapperchangerwithoutads.R
+import kz.first.a4kwallpapperchangerwithoutads.viewmodel.Factory
+import kz.first.a4kwallpapperchangerwithoutads.viewmodel.ViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.InputStream
@@ -41,8 +42,12 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        val factory = Factory(application)
-        viewModel = ViewModelProvider(this, factory).get(ViewModel::class.java)
+        val factory =
+            Factory(
+                application
+            )
+        viewModel = ViewModelProvider(this, factory).get(
+            ViewModel::class.java)
         viewModel.hint.value = true
         viewModel.download.value = false
         viewModel.setWallpaper.value = false

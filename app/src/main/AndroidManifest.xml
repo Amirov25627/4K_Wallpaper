@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.a4kwallpapperchangerwithoutads">
+    package="kz.first.a4kwallpapperchangerwithoutads">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
@@ -25,7 +24,7 @@
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/provider_paths" />
             </provider>
-        <activity android:name=".MainActivity">
+        <activity android:name="kz.first.a4kwallpapperchangerwithoutads.MainActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
