@@ -54,13 +54,8 @@ class CategoryListFragment : Fragment() {
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(binding.categoryRV)
 
-
         viewModel.getCategoryList()
 
-
-//        viewModel.status.observe(viewLifecycleOwner, Observer {
-//            updateStatus(it)
-//        })
         viewModel.goToDetailsLV.observe(viewLifecycleOwner, Observer {
             if (it) {
                 viewModel.setBackable()
@@ -72,6 +67,11 @@ class CategoryListFragment : Fragment() {
             if (it == null) return@Observer
             showList(it)
         })
+
+        viewModel.status.observe(viewLifecycleOwner, Observer {
+            if (it == ViewModel.STATUS.ERROR)
+            binding.lost.visibility = View.VISIBLE
+        })
     }
 
     private fun showList(list: List<CategoriesData>) {
@@ -79,22 +79,4 @@ class CategoryListFragment : Fragment() {
     }
 
 
-//    private fun updateStatus(status: ViewModel.STATUS) {
-//        when (status) {
-//            ViewModel.STATUS.LOADING -> {
-//                binding.categoryRV.visibility = View.GONE
-//                binding.statusIV.visibility = View.VISIBLE
-//                binding.statusIV.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.loading_animation))
-//            }
-//            SharedViewModel.STATUS.SUCCESS -> {
-//                binding.listRV.visibility = View.VISIBLE
-//                binding.statusIV.visibility = View.GONE
-//            }
-//            SharedViewModel.STATUS.ERROR ->{
-//                binding.listRV.visibility = View.GONE
-//                binding.statusIV.visibility = View.VISIBLE
-//                binding.statusIV.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_connection_error))
-//            }
-//        }
-//    }
 }

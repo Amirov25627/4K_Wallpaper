@@ -19,10 +19,11 @@ open class ViewModel(app: Application) : ViewModel() {
     val currentPicture = MutableLiveData<PicturesData>()
     val hint = MutableLiveData<Boolean>()
     var download = MutableLiveData<Boolean>()
+    var setWallpaper = MutableLiveData<Boolean>()
     val goToDetailsLV = MutableLiveData<Boolean>()
     val goToPictureLV = MutableLiveData<Boolean>()
     private val currentData = MutableLiveData<CategoriesData>()
-    private val status = MutableLiveData<STATUS>()
+    val status = MutableLiveData<STATUS>()
     private var topic = ""
 
 
@@ -33,26 +34,26 @@ open class ViewModel(app: Application) : ViewModel() {
                 val list = PicturesAPI.service.categoryList()
                 categoryList.value = list
                 status.value = STATUS.SUCCESS
-            }
-            catch (e: Exception){
-                if(categoryList.value.isNullOrEmpty())
-                {Log.d("ERROR!", e.toString())
-                    status.value = STATUS.ERROR}
-                else
-                {Log.d("ERROR", categoryList.value.toString() )
-                    status.value = STATUS.SUCCESS}
+            } catch (e: Exception) {
+                if (categoryList.value.isNullOrEmpty()) {
+                    Log.d("ERROR!", e.toString())
+                    status.value = STATUS.ERROR
+                } else {
+                    Log.d("ERROR", categoryList.value.toString())
+                    status.value = STATUS.SUCCESS
+                }
             }
         }
     }
 
-    fun getPictureList(){
+    fun getPictureList() {
         //Log.d("GD", countryName )
-        viewModelScope.launch{
-            try{
+        viewModelScope.launch {
+            try {
                 val list = PicturesAPI.service.pictureList(topic)
                 pictureList.value = list
-                Log.d("LIST ", list.toString() )
-            } catch (e:Exception){
+                Log.d("LIST ", list.toString())
+            } catch (e: Exception) {
                 pictureList.value = null
                 //Log.d("ER ", countryName )
             }
@@ -60,42 +61,42 @@ open class ViewModel(app: Application) : ViewModel() {
     }
 
 
-
-    fun goToDetails(data: CategoriesData){
+    fun goToDetails(data: CategoriesData) {
         goToDetailsLV.value = true
         currentData.value = data
         topic = currentData.value?.slug.toString()
     }
 
 
-    fun goToPicture(data: PicturesData){
+    fun goToPicture(data: PicturesData) {
         goToPictureLV.value = true
         currentPicture.value = data
     }
 
-
-
     //for fragment changing
-    enum class STATUS{
+    enum class STATUS {
         LOADING,
         ERROR,
         SUCCESS
     }
 
-    fun setBackable(){
+    fun setBackable() {
         goToDetailsLV.value = false
         goToPictureLV.value = false
 
     }
 
-    fun wallpaperSetter(timer: Int, random: Boolean, data: PicturesData?){
-        if (data!=null){
+    fun wallpaperDownloader(timer: Int, random: Boolean, data: PicturesData?) {
+        if (data != null) {
             download.value = true
-
-
         }
     }
 
+    fun wallpaperSetter(timer: Int, random: Boolean, data: PicturesData?) {
+        if (data != null) {
+            setWallpaper.value = true
+        }
+    }
 
 
 }

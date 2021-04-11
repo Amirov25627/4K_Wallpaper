@@ -1,22 +1,20 @@
 package com.example.a4kwallpapperchangerwithoutads.ui
 
-import android.app.WallpaperManager
+import android.graphics.drawable.AnimationDrawable
 import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
-
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
-import com.example.a4kwallpapperchangerwithoutads.MainActivity
-import com.example.a4kwallpapperchangerwithoutads.R
 import com.example.a4kwallpapperchangerwithoutads.databinding.PictureItemFragmentBinding
 import com.example.a4kwallpapperchangerwithoutads.viewmodel.ViewModel
+
 
 class PictureItemFragment : Fragment() {
     private lateinit var binding: PictureItemFragmentBinding
@@ -45,39 +43,16 @@ class PictureItemFragment : Fragment() {
         })
 
 
-        binding.setWallpaperButton.setOnClickListener {
-            binding.settings.visibility = View.VISIBLE
-            binding.setWallpaperButton.visibility = View.GONE
-            binding.randomView.visibility = View.GONE
+        //on press DOWNLOAD
+        binding.justDownload.setOnClickListener {
+            Toast.makeText(context, "Downloading wallpaper...", Toast.LENGTH_LONG).show()
+            viewModel.wallpaperDownloader(timer, random, viewModel.currentPicture.value)
         }
-
-
-
-            //checking time interval
-            binding.timeInterval.setOnCheckedChangeListener { _, checkedId ->
-                when (checkedId) {
-                    R.id.min -> {timer = 15
-                        binding.randomView.visibility = View.VISIBLE}
-                    R.id.medium -> {timer = 30
-                        binding.randomView.visibility = View.VISIBLE}
-                    R.id.max -> {timer = 60
-                        binding.randomView.visibility = View.VISIBLE}
-                    R.id.never -> binding.randomView.visibility = View.GONE
-                    }
-            }
-
-            //checking randomizer
-            binding.randomizer.setOnCheckedChangeListener { _, checkedId ->
-                when (checkedId) {
-                    true -> random = true
-                }
-            }
-
 
         //on press SET WALLPAPER
         binding.setButton.setOnClickListener {
+            Toast.makeText(context, "Setting wallpaper...", Toast.LENGTH_LONG).show()
             viewModel.wallpaperSetter(timer, random, viewModel.currentPicture.value)
-            Toast.makeText(context, "Downloading...", Toast.LENGTH_LONG).show()
         }
 
 

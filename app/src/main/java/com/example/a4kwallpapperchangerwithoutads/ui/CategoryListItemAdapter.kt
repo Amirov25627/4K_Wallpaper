@@ -40,7 +40,6 @@ class CategoryViewHolder(private val binding: CategoryListItemBinding, private v
         val uri = Uri.parse(data.preview_photos.first().urls.small)
         Glide
                 .with(binding.root.context)
-                //.setPlaceHolder(R.drawable.loading_animation, R.drawable.ic_broken_image)
                 .load(uri)
                 .into(binding.image)
 

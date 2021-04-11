@@ -36,10 +36,9 @@ class PicturesListItemAdapter(private val viewModel: ViewModel):  RecyclerView.A
 
 class PictureViewHolder(private val binding: PictureListItemBinding, private val viewModel: ViewModel) : RecyclerView.ViewHolder(binding.root) {
     fun bind(data: PicturesData) {
-        val uri = Uri.parse(data.urls.full)
+        val uri = Uri.parse(data.urls.regular)
         Glide
                 .with(binding.root.context)
-                //.setPlaceHolder(R.drawable.loading_animation, R.drawable.ic_broken_image)
                 .load(uri)
                 .into(binding.pictureItemContainer)
 

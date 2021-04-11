@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/loading"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:src="@drawable/frame_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image_container"
@@ -16,164 +26,174 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/set_wallpaper_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_set_wallpaper"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="70dp"
-        android:scaleX="2"
-        android:scaleY="2"
-        android:clickable="true"
-        android:focusable="true"
-        android:visibility="visible"
-        />
+    <!--    <ImageView-->
+    <!--        android:id="@+id/set_wallpaper_button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:src="@drawable/ic_set_wallpaper"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        android:layout_marginBottom="70dp"-->
+    <!--        android:scaleX="2"-->
+    <!--        android:scaleY="2"-->
+    <!--        android:clickable="true"-->
+    <!--        android:focusable="true"-->
+    <!--        android:visibility="visible"-->
+    <!--        />-->
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/settings"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:constraint_referenced_ids="background, settings_text, time_interval_text, time_interval, randomizer, randomizer_text, set_button"
-        android:visibility="gone"
-        />
+    <!--    <androidx.constraintlayout.widget.Group-->
+    <!--        android:id="@+id/settings"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:constraint_referenced_ids="background, settings_text, time_interval_text, time_interval, randomizer, randomizer_text, set_button"-->
+    <!--        android:visibility="visible"-->
+    <!--        />-->
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_transparent"
-        android:scaleX="2"
-        android:scaleY="2"
-        />
+    <!--    <ImageView-->
+    <!--        android:id="@+id/background"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        android:src="@drawable/ic_transparent"-->
+    <!--        android:scaleX="2"-->
+    <!--        android:scaleY="2"-->
+    <!--        />-->
 
-    <TextView
-        android:id="@+id/settings_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="@string/wallpaper_settings"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:layout_marginTop="24dp"
-        android:textStyle="bold"
-        />
+    <!--    <TextView-->
+    <!--        android:id="@+id/settings_text"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        android:text="@string/wallpaper_settings"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        />-->
 
-    <TextView
-        android:id="@+id/time_interval_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/settings_text"
-        app:layout_constraintBottom_toTopOf="@+id/time_interval"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:text="@string/interval_settings"
-        android:layout_marginLeft="40dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginTop="40dp"
-        />
+    <!--    <TextView-->
+    <!--        android:id="@+id/time_interval_text"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/settings_text"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/time_interval"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        android:text="@string/interval_settings"-->
+    <!--        android:layout_marginLeft="40dp"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="20sp"-->
+    <!--        android:layout_marginTop="40dp"-->
+    <!--        />-->
 
-    <RadioGroup
-        android:id="@+id/time_interval"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/time_interval_text"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="40dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+    <!--    <RadioGroup-->
+    <!--        android:id="@+id/time_interval"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/time_interval_text"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginLeft="40dp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
 
-        >
+    <!--        >-->
 
-        <RadioButton
-            android:id="@+id/min"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/minimum"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/min"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/minimum"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="20sp"-->
+    <!--            />-->
 
-        <RadioButton
-            android:id="@+id/medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/medium"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/medium"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/medium"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="20sp"-->
+    <!--            />-->
 
-        <RadioButton
-            android:id="@+id/max"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/maximum"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/max"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/maximum"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="20sp"-->
+    <!--            />-->
 
-        <RadioButton
-            android:id="@+id/never"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/never"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:checked="true"
-            />
-    </RadioGroup>
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/never"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/never"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="20sp"-->
+    <!--            android:checked="true"-->
+    <!--            />-->
+    <!--    </RadioGroup>-->
 
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/random_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:constraint_referenced_ids="randomizer_text, randomizer"
-        android:visibility="gone"
-        />
+    <!--    <androidx.constraintlayout.widget.Group-->
+    <!--        android:id="@+id/random_view"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:constraint_referenced_ids="randomizer_text, randomizer"-->
+    <!--        android:visibility="gone"-->
+    <!--        />-->
 
-    <TextView
-        android:id="@+id/randomizer_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/time_interval"
-        app:layout_constraintLeft_toLeftOf="@+id/time_interval"
-        android:text="@string/randomize"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        />
+    <!--    <TextView-->
+    <!--        android:id="@+id/randomizer_text"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/time_interval"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@+id/time_interval"-->
+    <!--        android:text="@string/randomize"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="20sp"-->
+    <!--        />-->
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/randomizer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/randomizer_text"
-        app:layout_constraintBottom_toBottomOf="@+id/randomizer_text"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="40dp"
-      />
+    <!--    <androidx.appcompat.widget.SwitchCompat-->
+    <!--        android:id="@+id/randomizer"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/randomizer_text"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/randomizer_text"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        android:layout_marginRight="40dp"-->
+    <!--      />-->
 
     <ImageView
         android:id="@+id/set_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_set_wallpaper"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomizer_text"
-        android:layout_marginTop="80dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="160dp"
         android:scaleX="2"
         android:scaleY="2"
-        />
+        android:src="@drawable/ic_set_wallpaper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
+    <ImageView
+        android:id="@+id/just_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:src="@drawable/ic_download"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

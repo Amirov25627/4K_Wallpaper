@@ -18,18 +18,31 @@
         tools:listitem="@layout/category_list_item" />
 
     <ImageView
-        android:id="@+id/search_button"
+        android:id="@+id/lost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleX="2"
-        android:scaleY="2"
-        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:focusable="true"/>
+        android:src="@drawable/ic_lost"
+        android:scaleY="2"
+        android:scaleX="2"
+        android:visibility="gone"/>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/search_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scaleX="2"-->
+<!--        android:scaleY="2"-->
+<!--        android:src="@drawable/ic_baseline_search_24"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"/>-->
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/hint"
